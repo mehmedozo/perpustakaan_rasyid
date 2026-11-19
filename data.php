@@ -39,7 +39,7 @@ $jumlah = mysqli_num_rows($hasil);
     
     </style>
 <body>
-    <h1>Data Anggota Perpustakaan</h1>
+    <h1>Data Anggota Perpustakaan Rasyid</h1>
     <table border="1" cellpadding="8">
         <tr>
             <th>No Anggota</th><th>Nama Lengkap</th><th>Email</th><th>No HP</th><th>Jenis Anggota</th><th>Alamat</th><th>Aksi</th>

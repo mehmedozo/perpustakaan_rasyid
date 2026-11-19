@@ -1,4 +1,12 @@
 <?php 
+
+/*
+Nama    : Muhammad Rasyid Ridho Al Fauzi
+Kelas   : TI 2B
+NPM     : 250202051
+
+pertemuan 11
+*/
 require_once "koneksi.php";
 
 $sql = "SELECT * FROM anggota ORDER BY id DESC ";

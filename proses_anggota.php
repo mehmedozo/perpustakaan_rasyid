@@ -75,8 +75,25 @@ if(empty($errors)){
                 VALUES (?, ?, ?, ?, ?, ?)";
 
     $stmt = mysqli_prepare($koneksi, $sql);
-    mysqli_stmt_bind_param($stmt, "sss", $no_anggota, $nama, $email, $no_hp, $jenis_anggota, $alamat);
-    mysqli_stmt_execute($stmt);
+
+    if($stmt){
+        mysqli_stmt_bind_param($stmt, "ssssss", $no_anggota, $nama, $email, $no_hp, $jenis_anggota, $alamat);
+        
+        if(mysqli_stmt_execute($stmt)){
+            $berhasil = true;
+        }else{
+            $pesan_db = mysqli_stmt_error($stmt);
+        }
+        mysqli_stmt_close($stmt);
+    }else{
+        $pesan_db = mysqli_error($koneksi);
+    }
+    mysqli_close($koneksi);
+
+    if($berhasil){
+        header("Location: form_anggota.php?status=sukses");
+        exit;
+    }
     
 }
 ?>
